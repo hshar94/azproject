@@ -1,8 +1,8 @@
 #!/bin/sh
 sudo ufw allow 5000/tcp
-sudo apt-get update
-sudo apt-get install python3
-sudo apt-get install python3-pip
+sudo yum update
+sudo yum install python3
+sudo yum install python3-pip
 pip3 install azure.storage
 pip3 install configparser
 pip3 install flask
