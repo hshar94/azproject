@@ -5,7 +5,7 @@
 import os
 from flask import Flask, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
-from azure.storage.blob import *
+from azure.storage.blob import BlobServiceClient
 import string
 import random
 import requests
@@ -24,7 +24,7 @@ key = Config.get('DEFAULT', 'key')
 container = Config.get('DEFAULT', 'container')
 
 
-blob_service = BlockBlobService(account_name=account, account_key=key)
+# blob_service = BlobServiceClient(account_url=account, credential=key)
 
 @app.route("/")
 def main():
@@ -47,7 +47,7 @@ def upload_file():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=5000)
 
 
 # In[ ]:
